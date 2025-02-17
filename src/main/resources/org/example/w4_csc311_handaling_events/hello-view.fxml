@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="org.example.w4_csc311_handaling_events.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<VBox prefHeight="280.0" prefWidth="321.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="org.example.w4_csc311_handaling_events.HelloController">
+   <MenuBar>
+     <menus>
+       <Menu mnemonicParsing="false" text="File">
+         <items>
+           <MenuItem mnemonicParsing="false" text="Close" />
+         </items>
+       </Menu>
+       <Menu mnemonicParsing="false" text="Edit">
+         <items>
+           <MenuItem mnemonicParsing="false" text="Delete" />
+         </items>
+       </Menu>
+         <Menu mnemonicParsing="false" text="View">
+            <items>
+               <MenuItem fx:id="myMenuItem1" mnemonicParsing="false" onAction="#openNewWindow" text="Open New Window" />
+            </items>
+         </Menu>
+       <Menu mnemonicParsing="false" text="Help">
+         <items>
+           <MenuItem mnemonicParsing="false" text="close" />
+         </items>
+       </Menu>
+     </menus>
+   </MenuBar>
+   <HBox prefHeight="100.0" prefWidth="200.0">
+      <children>
+         <VBox prefHeight="100.0" prefWidth="52.0" />
+      
+          <Label fx:id="welcomeText" />
+          <Button fx:id="myBtn1" onAction="#onHelloButtonClick" text="Hello!" />
+         <ImageView fx:id="myImage" fitHeight="150.0" fitWidth="155.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+               <Image url="@ImageFolder/alumni-association_circle-logo.png" />
+            </image>
+         </ImageView>
+      </children>
+   </HBox>
 </VBox>
